@@ -1,0 +1,21 @@
+// ParentComponent.js
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
+
+const ParentComponent = () => {
+  const [data, setData] = useState('Initial data');
+
+  const updateData = newData => {
+    setData(newData);
+  };
+
+  return (
+    <div>
+      <h2>Parent Component</h2>
+      <p>Data in Parent Component: {data}</p>
+      <ChildComponent updateData={updateData} />
+    </div>
+  );
+};
+
+export default ParentComponent;
